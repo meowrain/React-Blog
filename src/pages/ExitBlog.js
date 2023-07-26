@@ -1,20 +1,10 @@
-import React from "react";
-import {signOut} from "firebase/auth"
-import {auth} from "../firebase-config"
-import { useNavigate } from "react-router-dom";
-
+import { signOut } from "firebase/auth"
+import { auth } from "../firebase-config"
 function ExitBlog({setIsAuth}) {
-    function SignOutBlog() {
-        const navigate = useNavigate();
-        signOut(auth).then(()=>{
-            localStorage.clear();
-            setIsAuth(false);
-            navigate("/login");
-    
-        });
-    }
-    return (
-        <div onClick={SignOutBlog}>Blog Sign Out</div>
-    )
+    signOut(auth).then((res) => {
+        localStorage.clear();
+        setIsAuth(false);
+        window.location.pathname = "/login";
+    });
 }
 export default ExitBlog;
