@@ -15,12 +15,16 @@ function Login({ setIsAuth }) {
     };
 
     return (
+       <>
         <div className="loginPage">
-            <p>Sign In With Google to Continue</p>
-            <button className="login-with-google-btn" onClick={signInWithGoogle}>
-                Sign in with Google
-            </button>
+                <img src="https://meowrain.cn/upload/2023/06/IMG_20230622_212948_886.jpg" className="rounded-avatar" alt="avatar" />
+                <span className="text-center name-show"> <strong>MeowRain's React Blog</strong></span>
+                <p>Sign In With Google to Continue</p>
+                <button className="login-with-google-btn" onClick={signInWithGoogle}>
+                    Sign in with Google
+                </button>
         </div>
+       </>
     );
 }
 
